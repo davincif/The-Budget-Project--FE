@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import UxContainer from '@/ux/UxContainer.vue';
+import UXTitle from '@/ux/UXTitle.vue';
 import { ref } from 'vue';
 
 const userNumber = ref('');
@@ -13,9 +14,15 @@ const login = () => {
 </script>
 
 <template>
-  <main>
-    <UxContainer center>
+  <UxContainer center>
+    <div class="mb-1 place-items-center">
+      <img src="/src/assets/TBP-clean.svg" class="max-w-50" />
+      <UXTitle class="m-4">The Budget Project</UXTitle>
+      <UXTitle heading="h3" class="w-full text-end mb-1">~ by <bold>davincif</bold></UXTitle>
+    </div>
+
+    <main>
       <p>IN CONSTRUCTION</p>
-    </UxContainer>
-  </main>
+    </main>
+  </UxContainer>
 </template>

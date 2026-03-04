@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 960 320"
+    role="img"
+    aria-label="The Budget Project logo">
+    <title>The Budget Project</title>
+    <desc>Conceptual mark combining a home (family) and a ledger/graph (money/budget), with secondary builder signature davincif.</desc>
+
+    <!-- Mark -->
+    <g transform="translate(40,40)">
+        <!-- Outer shield (trust/safety) -->
+        <path d="M120 0
+             C165 28, 212 40, 260 44
+             V150
+             C260 230, 198 282, 120 320
+             C42 282, -20 230, -20 150
+             V44
+             C28 40, 75 28, 120 0 Z"
+            fill="#0B1F2A"/>
+
+        <!-- Inner panel -->
+        <path d="M120 26
+             C155 48, 193 58, 232 62
+             V148
+             C232 214, 183 254, 120 286
+             C57 254, 8 214, 8 148
+             V62
+             C47 58, 85 48, 120 26 Z"
+            fill="#0F2F3D"/>
+
+        <!-- House roof -->
+        <path d="M60 128 L120 82 L180 128"
+            fill="none"
+            stroke="#E7EEF2"
+            stroke-width="12"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+
+        <!-- House body -->
+        <rect x="78"
+            y="128"
+            width="84"
+            height="70"
+            rx="10"
+            fill="none"
+            stroke="#E7EEF2"
+            stroke-width="12"/>
+
+        <!-- Ledger / chart line inside the house (budget awareness) -->
+        <path d="M92 182
+             C108 164, 120 176, 132 156
+             S160 150, 170 138"
+            fill="none"
+            stroke="#7FD1AE"
+            stroke-width="10"
+            stroke-linecap="round"/>
+
+        <!-- Ledger dots -->
+        <circle cx="92"
+            cy="182"
+            r="6"
+            fill="#7FD1AE"/>
+        <circle cx="132"
+            cy="156"
+            r="6"
+            fill="#7FD1AE"/>
+        <circle cx="170"
+            cy="138"
+            r="6"
+            fill="#7FD1AE"/>
+
+        <!-- Divider subtle -->
+        <path d="M42 244 H198"
+            stroke="#E7EEF2"
+            stroke-opacity="0.18"
+            stroke-width="6"
+            stroke-linecap="round"/>
+
+        <!-- Secondary signature inside mark -->
+        <text x="120"
+            y="270"
+            text-anchor="middle"
+            font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+            font-size="18"
+            letter-spacing="1.5"
+            fill="#E7EEF2"
+            opacity="0.75">davincif</text>
+    </g>
+
+    <!-- Logotype -->
+    <g transform="translate(360,96)">
+        <text x="0"
+            y="0"
+            font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+            font-size="56"
+            font-weight="700"
+            fill="#0B1F2A">The Budget Project</text>
+
+        <text x="2"
+            y="46"
+            font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+            font-size="20"
+            fill="#0B1F2A"
+            opacity="0.72"
+            letter-spacing="0.8">Budget awareness for families and individuals</text>
+
+        <!-- Small secondary builder signature under the name -->
+        <text x="2"
+            y="86"
+            font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+            font-size="18"
+            fill="#0B1F2A"
+            opacity="0.55">by davincif</text>
+    </g>
+</svg>
