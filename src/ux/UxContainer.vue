@@ -1,14 +1,17 @@
 <script setup lang="ts">
-const { center } = defineProps({
-  center: {
-    type: Boolean,
-    default: false,
-  },
-});
+import { UxContainer } from './UxInterfaces';
+
+const { center, isLoading } = defineProps(UxContainer);
 </script>
 
 <template>
-  <section class="p-4" :class="[{ 'grid place-items-center': center }]">
+  <section
+    class="ux-container relative overflow-hidden p-4"
+    :class="[{ 'grid place-items-center': center }]"
+    :aria-busy="isLoading"
+  >
     <slot />
+
+    <UxShimmerOverlay :isLoading="isLoading" />
   </section>
 </template>

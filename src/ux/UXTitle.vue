@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const props = defineProps({
+import { computed } from 'vue';
+import { UxBase } from './UxInterfaces';
+import UxShimmerOverlay from './UxShimmerOverlay.vue';
+
+const { heading, isLoading } = defineProps({
+  ...UxBase,
   heading: {
     type: String,
     default: 'h1',
@@ -10,29 +15,22 @@ const props = defineProps({
   },
 });
 
-const { heading } = props;
+const tag = computed(() => {
+  const availableHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  return availableHeadings.includes(heading) ? heading : 'p';
+});
 </script>
 
 <template>
-  <h1 v-if="heading == 'h1'">
-    <slot />
-  </h1>
-  <h2 v-else-if="heading == 'h2'">
-    <slot />
-  </h2>
-  <h3 v-else-if="heading == 'h3'">
-    <slot />
-  </h3>
-  <h4 v-else-if="heading == 'h4'">
-    <slot />
-  </h4>
-  <h5 v-else-if="heading == 'h5'">
-    <slot />
-  </h5>
-  <h6 v-else-if="heading == 'h6'">
-    <slot />
-  </h6>
-  <p v-else>NOT RECOGNIZED HEADING</p>
+  <component :is="tag" :aria-busy="isLoading">
+    <span class="relative inline-block overflow-hidden align-middle">
+      <span :class="{ 'opacity-0': isLoading }">
+        <slot />
+      </span>
+
+      <UxShimmerOverlay :isLoading="isLoading" />
+    </span>
+  </component>
 </template>
 
 <style lang="css" scoped>

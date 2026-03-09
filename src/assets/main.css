@@ -3,3 +3,36 @@
 @import './base.css';
 
 @tailwind utilities;
+
+/* Shimmer - load cover */
+.shimmer-layer {
+  background: linear-gradient(
+    90deg,
+    rgba(229, 231, 235, 0.9) 0%,
+    rgba(243, 244, 246, 0.95) 35%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(243, 244, 246, 0.95) 65%,
+    rgba(229, 231, 235, 0.9) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-move 2s linear infinite;
+}
+
+@keyframes shimmer-move {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.loading-overlay-enter-active,
+.loading-overlay-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.loading-overlay-enter-from,
+.loading-overlay-leave-to {
+  opacity: 0;
+}
