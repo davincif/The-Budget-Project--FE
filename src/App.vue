@@ -27,10 +27,15 @@ watch(
 // watch(() => userStore.debugMode, onDebugModeChange);
 
 function setDebugModeListerns() {
-  console.log('setDebugModeListerns');
-  document.addEventListener('keyup', (event) => {
-    // code
-    console.log('event', event.key, event);
+  document.addEventListener('keydown', (event) => {
+    if (
+      // event.ctrlKey &&
+      // event.shiftKey &&
+      event.altKey &&
+      event.key.toLocaleLowerCase() === 'd'
+    ) {
+      userStore.toggleDebugMode();
+    }
   });
 }
 //#endregion Debugger mode related code .
@@ -38,6 +43,6 @@ function setDebugModeListerns() {
 
 <template>
   <RouterView />
-</template>
 
-<style scoped></style>
+  <p v-if="userStore.debugMode" class="absolute bottom-0">debug mode on</p>
+</template>

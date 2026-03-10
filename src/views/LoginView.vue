@@ -27,15 +27,15 @@ const login = () => {
 
     <main>
       <UxInput
-        class="mb-2"
         id="userName"
+        class="mb-2"
         autocomplete="username"
         label="User Name"
         :isLoading="isLoading"
       />
       <UxInput id="userPassword" label="User Password" :isLoading="isLoading" />
 
-      <UxButton id="loginSubmit" class="w-full mt-4" :isLoading>Login</UxButton>
+      <UxButton id="loginSubmit" class="w-full mt-8" :isLoading>Login</UxButton>
     </main>
   </UxContainer>
 </template>
