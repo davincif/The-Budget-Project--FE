@@ -1,15 +1,19 @@
 <script setup lang="ts">
+import { useGlobalConfigStore } from '@/stores/GlobalConfig';
 import UxButton from '@/ux/UxButton.vue';
 import UxContainer from '@/ux/UxContainer.vue';
 import UxInput from '@/ux/UxInput.vue';
 import UXTitle from '@/ux/UXTitle.vue';
+import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
 
 const user = ref({
   name: '',
   password: '',
 });
-const isLoading = ref(false);
+
+const globalConfigStore = useGlobalConfigStore();
+const { isLoading } = storeToRefs(globalConfigStore);
 
 const login = () => {
   console.error('NOT IMPLEMENTED');
@@ -20,8 +24,8 @@ const login = () => {
   <UxContainer center>
     <div class="mb-12 place-items-center">
       <img src="/src/assets/TBP-clean.svg" class="max-w-50" />
-      <UXTitle :isLoading="isLoading" class="m-4">The Budget Project</UXTitle>
-      <UXTitle :isLoading="isLoading" heading="h3" class="w-full text-end">
+      <UXTitle :isLoading class="m-4">The Budget Project</UXTitle>
+      <UXTitle :isLoading heading="h3" class="w-full text-end">
         ~ by davincif
       </UXTitle>
     </div>
@@ -32,14 +36,14 @@ const login = () => {
         class="mb-2"
         autocomplete="username"
         label="User Name"
-        :isLoading="isLoading"
+        :isLoading
         :v-model="user.name"
       />
       <UxInput
         id="userPassword"
         label="User Password"
         type="password"
-        :isLoading="isLoading"
+        :isLoading
         :v-model="user.password"
       />
 
