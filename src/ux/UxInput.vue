@@ -1,9 +1,17 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { UxInput } from './UxInterfaces';
+import { UxBase } from './UxInterfaces';
 import UxShimmerOverlay from './UxShimmerOverlay.vue';
 
-const { id, autocomplete, label, isLoading } = defineProps(UxInput);
+const { id, autocomplete, label, isLoading } = defineProps({
+  ...UxBase,
+  id: { type: String, required: true },
+  label: { type: String, required: true },
+  autocomplete: { type: String, default: 'on' },
+  type: { type: String, default: 'text' },
+  minlength: { type: String },
+  maxlength: { type: String },
+});
 const emits = defineEmits<{ onFocus: [event: FocusEvent]; onBlur: [] }>();
 const value = defineModel<string>();
 

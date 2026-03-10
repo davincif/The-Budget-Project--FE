@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { UxBase } from './UxInterfaces';
 
-const { isLoading } = defineProps(UxBase);
+const { isLoading } = defineProps({ ...UxBase });
 </script>
 
 <template>

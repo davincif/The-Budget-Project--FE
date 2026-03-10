@@ -4,6 +4,7 @@ import type { UserInfo } from './LoggedUser.model';
 
 export const useLoggedUserStore = defineStore('userInfo', () => {
   const info = ref<UserInfo | null>(null);
+  const debugMode = ref(false);
 
   function isLogged(): boolean {
     return info.value != null;
@@ -17,5 +18,20 @@ export const useLoggedUserStore = defineStore('userInfo', () => {
     info.value = null;
   }
 
-  return { info: readonly(info), isLogged, logIn, logOut };
+  function toggleDebugMode(setTo?: boolean) {
+    if (setTo == null || setTo == undefined) {
+      debugMode.value = !debugMode.value;
+    } else {
+      debugMode.value = setTo;
+    }
+  }
+
+  return {
+    info: readonly(info),
+    debugMode,
+    toggleDebugMode,
+    isLogged,
+    logIn,
+    logOut,
+  };
 });

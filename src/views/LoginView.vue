@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import UxButton from '@/ux/UxButton.vue';
 import UxContainer from '@/ux/UxContainer.vue';
 import UxInput from '@/ux/UxInput.vue';
 import UXTitle from '@/ux/UXTitle.vue';
@@ -20,7 +21,7 @@ const login = () => {
       <img src="/src/assets/TBP-clean.svg" class="max-w-50" />
       <UXTitle :isLoading="isLoading" class="m-4">The Budget Project</UXTitle>
       <UXTitle :isLoading="isLoading" heading="h3" class="w-full text-end">
-        ~ by <bold>davincif</bold>
+        ~ by davincif
       </UXTitle>
     </div>
 
@@ -33,6 +34,8 @@ const login = () => {
         :isLoading="isLoading"
       />
       <UxInput id="userPassword" label="User Password" :isLoading="isLoading" />
+
+      <UxButton id="loginSubmit" class="w-full mt-4" :isLoading>Login</UxButton>
     </main>
   </UxContainer>
 </template>
