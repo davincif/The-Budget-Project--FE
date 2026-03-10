@@ -5,10 +5,11 @@ import UxInput from '@/ux/UxInput.vue';
 import UXTitle from '@/ux/UXTitle.vue';
 import { ref } from 'vue';
 
-// const userNumber = ref('');
-// const password = ref('');
+const user = ref({
+  name: '',
+  password: '',
+});
 const isLoading = ref(false);
-// const enabled = ref(true);
 
 const login = () => {
   console.error('NOT IMPLEMENTED');
@@ -32,8 +33,15 @@ const login = () => {
         autocomplete="username"
         label="User Name"
         :isLoading="isLoading"
+        :v-model="user.name"
       />
-      <UxInput id="userPassword" label="User Password" :isLoading="isLoading" />
+      <UxInput
+        id="userPassword"
+        label="User Password"
+        type="password"
+        :isLoading="isLoading"
+        :v-model="user.password"
+      />
 
       <UxButton id="loginSubmit" class="w-full mt-8" :isLoading>Login</UxButton>
     </main>

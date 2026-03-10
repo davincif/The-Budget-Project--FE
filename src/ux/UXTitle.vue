@@ -22,7 +22,11 @@ const tag = computed(() => {
 </script>
 
 <template>
-  <component :is="tag" :aria-busy="isLoading">
+  <component
+    :is="tag"
+    :aria-busy="isLoading"
+    :class="{ 'notselectable cursor-wait': isLoading }"
+  >
     <span class="relative inline-block overflow-hidden align-middle">
       <span :class="{ 'opacity-0': isLoading }">
         <slot />

@@ -2,6 +2,16 @@
 
 @layer base {
   @import './base.css';
+
+  .notselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently (in 2017) supported by
+                          Chrome, Edge, Opera and Firefox */
+  }
 }
 
 @tailwind utilities;

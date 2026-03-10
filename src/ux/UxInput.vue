@@ -17,7 +17,9 @@ const value = defineModel<string>();
 
 const isFocused = ref(false);
 
-const hasContent = computed(() => value.length > 0);
+const hasContent = computed(() =>
+  Boolean(value.value && value.value.length > 0),
+);
 const shouldLabelFloat = computed(() => isFocused.value || hasContent.value);
 
 function onFocus(payload: FocusEvent) {
@@ -34,7 +36,11 @@ function onBlur() {
 </script>
 
 <template>
-  <div class="flex flex-col relative" :aria-busy="isLoading">
+  <div
+    class="flex flex-col relative"
+    :class="{ 'pointer-events-none': isLoading }"
+    :aria-busy="isLoading"
+  >
     <label
       :for="id"
       :class="[

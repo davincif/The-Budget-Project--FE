@@ -11,7 +11,8 @@ const { isLoading } = defineProps({
 
 <template>
   <button
-    class="p-4 border rounded-sm h-12 relative"
+    class="p-4 border rounded-sm h-12 relative cursor-pointer"
+    :class="{ 'cursor-wait disabled': isLoading }"
     :aria-busy="isLoading"
     :id
     :name="id"
@@ -21,11 +22,3 @@ const { isLoading } = defineProps({
     <UxShimmerOverlay :isLoading="isLoading" />
   </button>
 </template>
-
-<style scoped>
-/*
-@layer base {
-  p-4 border rounded-sm h-12
-}
-*/
-</style>
