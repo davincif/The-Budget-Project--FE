@@ -7,6 +7,12 @@ const { isLoading } = defineProps({
   id: { type: String, required: true },
   type: { type: String, default: 'text' },
 });
+
+const emits = defineEmits<{ onClick: [event: PointerEvent] }>();
+
+function onClick(event: PointerEvent) {
+  emits('onClick', event);
+}
 </script>
 
 <template>
@@ -16,6 +22,8 @@ const { isLoading } = defineProps({
     :aria-busy="isLoading"
     :id
     :name="id"
+    @click="onClick"
+    @submit=""
   >
     <slot />
 
