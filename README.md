@@ -52,3 +52,9 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+### Tools
+
+1. [headlessui](https://headlessui.com/v1/vue) for UI Lib
+2. [Tailwin](https://tailwindcss.com/docs/installation/using-vite) as CSS lib
+3. [Heroicons](https://heroicons.com/outline) as free and open source Icon lib

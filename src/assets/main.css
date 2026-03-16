@@ -1,37 +1,42 @@
 @import 'tailwindcss';
 
-@import './base.css';
+@layer base {
+  @import './base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+  .notselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently (in 2017) supported by
+                          Chrome, Edge, Opera and Firefox */
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
+@tailwind utilities;
+
+@layer components {
+  /* Shimmer - load cover */
+  .shimmer-layer {
+    background: linear-gradient(
+      90deg,
+      rgba(229, 231, 235, 0.9) 0%,
+      rgba(243, 244, 246, 0.95) 35%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(243, 244, 246, 0.95) 65%,
+      rgba(229, 231, 235, 0.9) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-move 2s linear infinite;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+  @keyframes shimmer-move {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
   }
 }
